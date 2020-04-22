@@ -22,9 +22,17 @@ describe Bankaccount do
       account.deposit(10)
       expect(account.transactions).to include transaction
     end
-    it 'raises an error if the amount is a negative number' do
-
+    it 'raises an error if the amount deposited is a negative number' do
       expect { account.deposit(-10) }.to raise_error(RuntimeError)
+    end
+    it 'raises an error if the amount withdrew is higher than the amount' do
+      account.deposit(10)
+      expect { account.withdraw(20) }.to raise_error(RuntimeError)
+    end
+
+    it 'raises an error if the amount withdrew is negative' do
+      account.deposit(10)
+      expect { account.withdraw(-20) }.to raise_error(RuntimeError)
     end
 
   it 'makes a withdarwal' do
