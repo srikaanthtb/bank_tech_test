@@ -41,7 +41,7 @@ class Bankaccount
    end
 
    def save(transaction)
-     @transactions << transaction
+    @transactions << transaction
    end
 
    def increase_balance(amount)

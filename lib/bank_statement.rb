@@ -7,7 +7,7 @@ class Bankstatement
    private
 
    def print_header
-     "date      || credit || debit || balance\n"
+     "date       || credit || debit || balance\n"
    end
 
    def print_transactions
